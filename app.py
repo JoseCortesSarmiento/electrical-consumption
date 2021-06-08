@@ -8,6 +8,8 @@ import mysql.connector
 import hashlib
 import json
 import os
+from app import app as application
+
 
 config = {
   'user': 'root',
@@ -25,7 +27,7 @@ app.config['JWT_SECRET_KEY'] = 's3cur1ty-token_wE!3'
 jwt = JWTManager(app)
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
 
 ############################
 #                          #
