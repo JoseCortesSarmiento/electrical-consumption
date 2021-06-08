@@ -7,6 +7,7 @@ from flask_jwt_extended import JWTManager
 import mysql.connector
 import hashlib
 import json
+import os
 
 config = {
   'user': 'root',
@@ -23,7 +24,8 @@ CORS(app)
 app.config['JWT_SECRET_KEY'] = 's3cur1ty-token_wE!3'
 jwt = JWTManager(app)
 
-app.run(debug=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host='0.0.0.0', port=port)
 
 ############################
 #                          #
