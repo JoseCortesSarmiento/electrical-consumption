@@ -8,7 +8,6 @@ import mysql.connector
 import hashlib
 import json
 import os
-from app import app as application
 
 
 config = {
